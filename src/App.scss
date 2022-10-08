@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,400;1,900&family=Nunito:wght@700&family=Poppins:wght@300;400;600&family=Roboto:ital,wght@0,300;0,500;0,700;1,400&display=swap');
+
+$color: #161122;
+$btn-color: lighten($color, 8%);
+$digit-btn-color: lighten($color, 20%);
+$operation-btn-color: lighten($color, 40%);
+
+body {
+  background-color: $color;
+  font-family: Inter, sans-serif ;
+}
+
+.calculator-app {
+  background-color: $color;
+  padding: 1.5rem;
+  display: grid;
+  height: calc(100vh - 1.5rem *2);
+  width: 450px;
+  margin: auto;
+  gap: 1.5rem;
+  align-content: start;
+  justify-content: end;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+
+  .output {
+    grid-column: 1 / -1;
+    color: white;
+    text-align: right;
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-weight: 200;
+    overflow: hidden;
+  }
+
+  button {
+    border: none;
+    background-color: $btn-color;
+    color: white;
+    font-size: 40px;
+    border-radius: 40px;
+
+    &:hover {
+      opacity: .8;
+      cursor: pointer;
+    }
+
+    &.digit {
+      background-color: $digit-btn-color;
+    }
+
+    &.operation {
+      background-color: $operation-btn-color;
+
+    }
+  }
+}
